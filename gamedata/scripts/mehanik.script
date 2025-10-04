@@ -1,0 +1,51 @@
+local iTimer
+local npc_save
+
+function start_timer()
+     iTimer = time_global() + 1*1000
+end
+
+function timer_update()
+     if iTimer and iTimer < time_global() then
+	iTimer = nil
+	npc_out_gulag(npc_save)
+     end
+end
+
+function enemies_dialog_rep(actor, npc)
+local com = npc:character_community()
+     if com == "stalker" then
+	db.actor:set_character_rank(db.actor:character_rank() + 4)
+     elseif com == "military" or com == "killer" or com == "bandit" then
+	npc:set_character_community("stalker", 0, 0)
+	db.actor:set_character_rank(db.actor:character_rank() + 3)
+	npc_save = npc
+	start_timer()
+     elseif npc:character_community() == "ecolog" then
+	db.actor:set_character_rank(db.actor:character_rank() + 5)
+     elseif npc:character_community() == "dolg" then
+	db.actor:set_character_rank(db.actor:character_rank() + 4)
+     elseif npc:character_community() == "freedom" then
+	db.actor:set_character_rank(db.actor:character_rank() + 4)
+     else
+	npc:set_character_community("stalker", 0, 0)
+	db.actor:set_character_rank(db.actor:character_rank() + 3)
+end
+     if second_speaker ~= nil then
+	if com == "stalker" or com == "ecolog" or com == "dolg" or com == "freedom" then
+	second_speaker:set_relation(game_object.friend, first_speaker)
+	end
+     end
+end
+
+function npc_out_gulag(npc)
+local obj = alife():object(npc:id())
+local unreg_id = obj:smart_terrain_id()    
+	if unreg_id ~= 65535 and npc:alive() then      
+		local unreg = alife():object(unreg_id)
+		if unreg then
+			unreg:unregister_npc(obj) 
+		end  
+	end
+	npc_save = nil
+end

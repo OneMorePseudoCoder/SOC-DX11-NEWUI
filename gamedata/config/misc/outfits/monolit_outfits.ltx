@@ -1,0 +1,59 @@
+;*********************************************************************************************
+;---------------------------------------------------------------------------------------------
+;		КОСТЮМ МОНОЛИТОВЦА
+;---------------------------------------------------------------------------------------------
+;*********************************************************************************************
+
+[monolit_outfit]:outfit_base
+GroupControlSection			= spawn_group
+discovery_dependency 			= 
+$spawn 					= "outfit\monolit_outfit"
+;$prefetch 				= 32
+class					= E_STLK
+cform           			= skeleton
+visual          			= equipments\monolit_suit
+actor_visual				= actors\hero\stalker_monolit.ogf
+player_hud_section			= actor_hud_15
+
+ef_equipment_type			= 3
+
+inv_name				= monolit_outfit_name
+inv_name_short				= monolit_outfit_name
+description				= monolit_outfit_description
+inv_weight				= 5.0
+inv_grid_width				= 2
+inv_grid_height				= 3
+inv_grid_x				= 10
+inv_grid_y				= 16
+full_icon_name				= npc_icon_monolit_outfit
+
+cost					= 10000
+slot					= 6
+full_scale_icon				= 6,11			;иконка сталкера в костюме в полный рост
+power_loss				= 0.7
+immunities_sect				= sect_monolit_outfit_immunities
+
+; LOW RESISTANCE
+burn_protection 			= 0.0850
+shock_protection 			= 0.300
+radiation_protection 			= 0.0060
+chemical_burn_protection 		= 0.0400
+telepatic_protection 			= 0.0
+strike_protection 			= 0.30
+explosion_protection 			= 0.15
+wound_protection			= 0.28
+
+bones_koeff_protection 			= kombez_mask_damage
+hit_fraction_actor			= 0.5
+
+
+[sect_monolit_outfit_immunities]
+burn_immunity				= 0.03
+strike_immunity				= 0.0
+shock_immunity				= 0.03
+wound_immunity				= 0.03
+radiation_immunity			= 0.0
+telepatic_immunity			= 0.0
+chemical_burn_immunity			= 0.03
+explosion_immunity			= 0.03
+fire_wound_immunity			= 0.015

@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+/.vs
+/binaries
+*.db
+/intermediate
+/libraries
+/ipch
+*.opendb

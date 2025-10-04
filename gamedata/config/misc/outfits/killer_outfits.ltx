@@ -1,0 +1,59 @@
+;---------------------------------------------------------------------------------------------
+;		КОСТЮМ НАЕМНИКА
+;---------------------------------------------------------------------------------------------
+[killer_outfit]:outfit_base
+GroupControlSection			= spawn_group
+discovery_dependency 			= 
+$spawn 					= "outfit\killer_outfit"
+;$prefetch 				= 32
+class					= E_STLK
+cform           			= skeleton
+visual          			= equipments\stalker_killer_suit
+actor_visual				= actors\hero\stalker_killer.ogf	
+player_hud_section			= actor_hud_12
+
+ef_equipment_type			= 4
+
+inv_name				= killer_outfit_name
+inv_name_short				= killer_outfit_name
+description				= killer_outfit_description
+inv_weight				= 5.0
+slot					= 6
+inv_grid_width				= 2
+inv_grid_height				= 3
+inv_grid_x				= 4
+inv_grid_y				= 15
+full_icon_name				= npc_icon_killer_outfit
+
+cost					= 6000
+full_scale_icon				= 4,11			;иконка сталкера в костюме в полный рост
+power_loss				= 0.7
+
+immunities_sect				= sect_killer_outfit_immunities
+
+; LOW RESISTANCE
+burn_protection 			= 0.0750
+shock_protection 			= 0.300
+radiation_protection 			= 0.0040
+chemical_burn_protection 		= 0.0425
+telepatic_protection 			= 0.0
+strike_protection 			= 0.25
+explosion_protection 			= 0.2
+wound_protection			= 0.25
+
+
+bones_koeff_protection 			= gilet_antigas_damage
+hit_fraction_actor			= 0.75
+
+
+[sect_killer_outfit_immunities]
+burn_immunity				= 0.03
+strike_immunity				= 0.0
+shock_immunity				= 0.03
+wound_immunity				= 0.03
+radiation_immunity			= 0.0
+telepatic_immunity			= 0.0
+chemical_burn_immunity			= 0.03
+explosion_immunity			= 0.03
+fire_wound_immunity			= 0.015
+

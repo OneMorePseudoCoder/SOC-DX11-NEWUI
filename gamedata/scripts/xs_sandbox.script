@@ -1,0 +1,224 @@
+--[[---------------------------------------------------------------------
+Система, позволяющая организовывать event-driven модель с 
+делегированием событий
+--]]---------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+--- xStream, 14/01/2011                                               ---
+--- version 1.4                                                       ---
+-------------------------------------------------------------------------
+
+--===========================================================================--
+--private members
+
+local scripts_to_register = { "^ai_", "^lwc_"}
+
+-- prevent dublicate init
+local registered_modules = {}
+-- calback links storage
+local callbacks_recipients = {}
+-- triggered events debug
+local events_in_process = {}
+
+local function register(callback_name, funct)
+	if callback_name and funct and type(funct)=="function" then
+		if not callbacks_recipients[callback_name] then
+			callbacks_recipients[callback_name]={}
+		end
+		table.insert(callbacks_recipients[callback_name],funct)
+	else
+		vis_log("sandbox error: can't add callback with empty name OR invalid function was passed to registrator "..tostring(callback_name) )
+	end
+end
+
+local function unregister(callback_name, funct)
+	if callback_name and funct and type(funct)=="function" then
+		if not callbacks_recipients[callback_name] then
+			return
+		end
+		for _,cb in ipairs(callbacks_recipients[callback_name]) do
+			if cb == funct then
+				table.remove(callbacks_recipients[callback_name], _)
+				return
+			end
+		end
+	end
+end
+
+-- event callbacks can trigger another events but they must have different type
+local function trigger(evt)
+	
+	local callback_name = evt:name()
+	if callback_name then
+		if callbacks_recipients[callback_name] then
+		
+			-- hang debug
+			events_in_process[#events_in_process+1] = evt
+		
+			local callbacks_to_remove = {}
+			for _,funct in ipairs(callbacks_recipients[callback_name]) do
+				if evt.__break == true then
+					break
+				end
+				if funct(evt) then
+					print("Warning! Event object [%s] [%s] has broken!", true, callback_name, tostring(evt ~= nil))
+				end
+				-- remove callback from stack
+				if evt.__removeThisCallback then
+					callbacks_to_remove[#callbacks_to_remove+1] = _
+					evt.__removeThisCallback = nil
+				end
+				
+			end
+			
+			-- hang debug
+			events_in_process[#events_in_process] = nil
+			
+			-- remove collected callbacks from stack
+			if #callbacks_to_remove>0 then
+				for _, id in pairs(callbacks_to_remove) do
+					table.remove(callbacks_recipients[callback_name], id)
+				end
+			end
+			
+		end
+	else
+		vis_log("sandbox error: trying shot calback with empty name")
+	end
+
+end
+
+local function hanged_events_check()
+	if #events_in_process>0 then
+	
+		local cbFormData = {}
+		
+		for idx, lost_event in ipairs(events_in_process) do
+			local err = "sandbox error: event '" .. lost_event:name() .. "' has hanged with fingerprint: " .. (lost_event.__dbg_fingerprint or 0)
+			table.insert(cbFormData, err)
+			vis_log(err, true)
+		end
+		abort("Sandbox fatal error. See info above")
+	end
+end
+
+--===========================================================================--
+-- public members
+
+-- helpers --
+
+
+local bufferedmessages={}
+function vis_log(msg, show_tip)
+	print(msg)
+	
+	if not show_tip then
+		return
+	end
+	
+	if bufferedmessages and msg then
+		table.insert(bufferedmessages,msg)
+	end
+	
+	if db and db.actor and #bufferedmessages>0 then
+		for k,msg in ipairs(bufferedmessages) do
+			db.actor:give_game_news(msg, "ui\\ui_iconsTotal", Frect():set(0,658,83,47), 0, 15000)
+		end
+		bufferedmessages={}
+	end
+end
+-- end of helpers --
+
+-- event class -- 
+
+class "event"
+
+function event:__init(name)
+	self.__evt_name = name
+end
+
+-- debug fingerprint
+function event:setFingerprint(val)
+	self.__dbg_fingerprint = val
+	return self
+end
+
+-- get event name
+function event:name()
+	return self.__evt_name
+end
+
+-- register event callback function
+function event:register(funct)
+	register(self.__evt_name, funct)
+	return self
+end
+
+-- unregister callback
+function event:unregister(funct)
+	unregister(self.__evt_name, funct)	
+	return self
+end
+
+-- triggers event
+function event:trigger(data_table)
+	if type(data_table) == "table"then
+		for k,v in pairs(data_table) do 
+			self[k] = v 
+		end
+	end
+	trigger(self)
+	return self
+end
+
+-- stops callback queue execution
+function event:stop()
+	self.__break = true
+	return self
+end
+
+-- remove current calback after execution
+function event:removeThisCallback()
+	self.__removeThisCallback = true
+	return self
+end
+
+function init()
+	_G.event = event
+
+	--[[
+		Вместо таблицы с предуказанными файлами, пробегимся по всем скриптам с префиксом lwc_.
+		Если найдем функцию init_callbacks, то вызовем её.
+		Идея by malandrinus.
+	--]]
+
+	local f = getFS()
+	local list = f:file_list_open_ex("$game_scripts$", bit_or(FS.FS_ListFiles, FS.FS_RootOnly), "*.script")
+	local list_size = list:Size() - 1
+	
+	list:Sort(FS.FS_sort_by_name_up)
+	
+	for	i = 0, list_size do
+		local file = list:GetAt(i)
+		local file_name_ext = file:NameShort()
+		local file_name = file_name_ext:sub(0, #file_name_ext - 7)
+
+		local is_allowed = false
+		for i = 1, #scripts_to_register do
+			if file_name:find(scripts_to_register[i]) then
+				is_allowed = true
+				break
+			end
+		end
+
+		-- Код xStream.
+		if is_allowed and _G[file_name] and _G[file_name].init_callbacks then
+			if not registered_modules[file_name] then
+				_G[file_name].init_callbacks()
+				registered_modules[file_name] = true
+			end
+		end
+	end	
+
+	level.add_call(hanged_events_check, fake_fun) -- сторожевой таймер, thx malandrinus
+end

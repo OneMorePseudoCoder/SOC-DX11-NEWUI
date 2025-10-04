@@ -1,0 +1,72 @@
+[ammo_9x18_fmj]:ammo_base
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\ammo\ammo_9x18_fmj" ; option for Level Editor
+class			= AMMO
+cform           	= skeleton
+visual          	= dynamics\weapons\wpn_ammo\ammo_9x18_fmj.ogf
+description		= ammo-9x18-fmj_descr
+$prefetch 		= 64
+
+cost			= 200
+
+box_size		= 50
+
+inv_name		= ammo-9x18-fmj
+inv_name_short	= ammo-9x18-fmj_s
+inv_weight		= .2
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 11
+inv_grid_y			= 12
+
+
+k_dist			= 1
+k_disp			= 1
+k_hit			= 1
+k_impulse		= 1
+k_pierce		= 0.25
+k_ap			= 0.25
+impair			= 1
+buck_shot		= 1
+tracer			= on
+wm_size			= 0.05
+k_air_resistance = 1.5
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[ammo_9x18_pmm]:ammo_base
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\ammo\ammo_9x18_pmm" ; option for Level Editor
+class			= AMMO
+cform           = skeleton
+visual          = dynamics\weapons\wpn_ammo\ammo_9x18_pmm.ogf
+description		= ammo-9x18-pmm_descr
+$prefetch 		= 64
+
+cost			= 300
+
+box_size		= 50
+
+inv_name		= ammo-9x18-pmm
+inv_name_short	= ammo-9x18-pmm_s
+inv_weight		= .2
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 12
+inv_grid_y			= 12
+
+k_dist			= 1
+k_disp			= 1
+k_hit			= 1
+k_impulse		= 1
+k_pierce		= 0.30
+k_ap			= 0.30
+impair			= 1
+buck_shot		= 1
+tracer			= on
+wm_size         = 0.05
+k_air_resistance = 1.5
+					

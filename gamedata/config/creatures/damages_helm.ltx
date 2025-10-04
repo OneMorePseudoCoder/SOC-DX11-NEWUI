@@ -1,0 +1,81 @@
+;***************************************************************
+; ACTOR BODY SECTIONS
+;***************************************************************
+[actor_body_damage_absent]		;опнрхбнцюг, ярюкэмни ькел, ькел "гюякнм", рюйрхвеяйхи ькел, ькел "ятепю л12"
+bip01_pelvis 				= 1.0, -1
+bip01_spine 		 		= 1.0, -1
+bip01_spine1 		 		= 1.0, -1
+bip01_spine2 		 		= 1.0, -1
+
+bip01_l_clavicle	 		= 1.0, -1
+bip01_l_upperarm	 		= 1.0, -1
+bip01_l_forearm	 	 		= 1.0, -1
+bip01_l_hand	 	 		= 1.0, -1
+
+bip01_r_clavicle	 		= 1.0, -1
+bip01_r_upperarm	 		= 1.0, -1
+bip01_r_forearm	 	 		= 1.0, -1
+bip01_r_hand	 	 		= 1.0, -1
+
+bip01_l_thigh	 	 		= 1.0, -1
+bip01_l_calf	 	 		= 1.0, -1
+bip01_l_foot	 	 		= 1.0, -1
+bip01_r_thigh	 	 		= 1.0, -1
+bip01_r_calf	 	 		= 1.0, -1
+bip01_r_foot	 	 		= 1.0, -1
+
+
+;***************************************************************
+;  ACTOR HEAD SECTIONS
+;***************************************************************
+[actor_head_damage_respirator];		опнрхбнцюг
+bip01_neck 			 		= 1.0, 0.0
+bip01_head 			 		= 1.0, 0.0
+eyelid_1 			 		= 1.0, 0.0
+eye_left 			 		= 1.0, 0.0
+eye_right 			 		= 1.0, 0.0
+jaw_1 		 		 		= 1.0, 0.0
+
+[actor_head_damage_protective];		ькел "гюякнм"
+bip01_neck 			 		= 1.0, 0.15
+bip01_head 			 		= 1.0, 0.15
+eyelid_1 			 		= 1.0, 0.15
+eye_left 			 		= 1.0, 0.15
+eye_right 			 		= 1.0, 0.15
+jaw_1 		 		 		= 1.0, 0.15
+
+[actor_head_damage_hardhat];		ярюкэмни ькел
+bip01_neck 			 		= 1.0, 0.3
+bip01_head 			 		= 1.0, 0.3
+eyelid_1 			 		= 1.0, 0.3
+eye_left 			 		= 1.0, 0.3
+eye_right 			 		= 1.0, 0.3
+jaw_1 		 		 		= 1.0, 0.3
+
+[actor_head_damage_tactic];		рюйрхвеяйхи ькел
+bip01_neck 			 		= 1.0, 0.6
+bip01_head 			 		= 1.0, 0.6
+eyelid_1 			 		= 1.0, 0.6
+eye_left 			 		= 1.0, 0.6
+eye_right 			 		= 1.0, 0.6
+jaw_1 		 		 		= 1.0, 0.6
+
+[actor_head_damage_battle];		ькел "ятепю л12"
+bip01_neck 			 		= 1.0, 0.65
+bip01_head 			 		= 1.0, 0.65
+eyelid_1 			 		= 1.0, 0.65
+eye_left 			 		= 1.0, 0.65
+eye_right 			 		= 1.0, 0.65
+jaw_1 		 		 		= 1.0, 0.65
+
+
+;*******************************************************************************************************
+; ACTOR HELM SECTIONS
+;*******************************************************************************************************
+[actor_helm_respirator]:actor_body_damage_absent, actor_head_damage_respirator;		опнрхбнцюг
+[actor_helm_protective]:actor_body_damage_absent, actor_head_damage_protective;		ькел "гюякнм"
+[actor_helm_hardhat]:actor_body_damage_absent, actor_head_damage_hardhat;		ярюкэмни ькел
+[actor_helm_tactic]:actor_body_damage_absent, actor_head_damage_tactic;			рюйрхвеяйхи ькел
+[actor_helm_battle]:actor_body_damage_absent, actor_head_damage_battle;			ькел "ятепю л12"
+;********************************************************************************************************
+

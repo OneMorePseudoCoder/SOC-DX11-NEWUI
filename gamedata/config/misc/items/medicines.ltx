@@ -1,0 +1,141 @@
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;	MEDICAL
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[antirad]:booster
+GroupControlSection		= spawn_group
+discovery_dependency =
+$spawn 				= "food and drugs\antirad"
+$prefetch 			= 32
+class				= II_ANTIR
+cform           		= skeleton
+visual          		= equipments\item_antirad.ogf
+description			= enc_equipment_medi_antirad1
+
+inv_name			= Antirad
+inv_name_short			= Antirad
+inv_weight			= 0.1
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 18
+inv_grid_y			= 12
+cost				= 300
+
+boost_time			= 10.0
+boost_radiation_restore		= 0.01
+
+use_sound			= interface\inv_pills
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[medkit]:booster  ,medkit_attach_params
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "food and drugs\medkit"
+$prefetch 			= 8
+class				= II_MEDKI
+cform				= skeleton
+visual				= equipments\item_aptechka.ogf
+description			= enc_equipment_medi_medkit1
+inv_name			= Medkit
+inv_name_short			= Medkit
+inv_weight			= 0.1	;0.2
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 6
+inv_grid_y			= 14
+cost				= 150
+
+boost_time			= 3.0
+boost_health_restore		= 0.01
+boost_radiation_restore		= 0.0
+boost_bleeding_restore		= 0.0005
+
+use_sound			= interface\inv_medkit
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[medkit_army]:booster	,medkit_attach_params
+GroupControlSection		= spawn_group
+discovery_dependency =
+$spawn 				= "food and drugs\medkit_army"
+$prefetch 			= 8
+class				= II_MEDKI
+cform				= skeleton
+visual				= equipments\item_aptechka3.ogf
+description			= enc_equipment_medi_medkit2
+inv_name			= Medkit_army
+inv_name_short			= Medkit_army
+inv_weight			= 0.2	;0.2
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 16
+inv_grid_y			= 20
+cost				= 220
+
+boost_time			= 5.0
+boost_health_restore		= 0.01
+boost_radiation_restore		= 0.0
+boost_bleeding_restore		= 0.0025
+
+use_sound			= interface\inv_medkit
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[medkit_scientic]:booster	,medkit_attach_params
+GroupControlSection		= spawn_group
+discovery_dependency =
+$spawn 				= "food and drugs\medkit_scientic"
+$prefetch 			= 8
+class				= II_MEDKI
+cform				= skeleton
+visual				= equipments\item_aptechka2.ogf
+description			= enc_equipment_medi_medkit3
+inv_name			= Medkit_scientific
+inv_name_short			= Medkit_scientific
+inv_weight			= 0.3	;0.2
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 14
+inv_grid_y			= 20
+cost				= 200
+
+boost_time			= 10.0
+boost_health_restore		= 0.01
+boost_radiation_restore		= 0.01
+boost_bleeding_restore		= 0.005
+
+use_sound			= interface\inv_medkit
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[bandage]:booster ;,medkit_attach_params
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "food and drugs\bandage"
+$prefetch 			= 8
+class				= II_BANDG
+cform				= skeleton
+visual				= equipments\item_bandage.ogf
+description			= enc_equipment_medi_bandage1
+
+inv_name			= bandage
+inv_name_short			= bandage
+inv_weight			= 0.1	;0.2
+cost				= 20
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 3
+inv_grid_y			= 18
+
+
+boost_time			= 5.0
+boost_bleeding_restore		= 0.02
+
+use_sound			= interface\inv_bandage
+
+auto_attach			= false
+attach_angle_offset		= 1.78, 3.22, -1.58	; y,z,x
+attach_position_offset		= 0.176, -0.006, 0.058
+attach_bone_name		= bip01_r_hand

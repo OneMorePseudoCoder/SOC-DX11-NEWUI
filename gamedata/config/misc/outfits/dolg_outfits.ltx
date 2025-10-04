@@ -1,0 +1,118 @@
+;---------------------------------------------------------------------------------------------
+;		ОБЫЧНЫЙ КОСТЮМ ДОЛГА
+;---------------------------------------------------------------------------------------------
+[dolg_outfit]:outfit_base
+GroupControlSection			= spawn_group
+discovery_dependency 			= 
+$spawn 					= "outfit\dolg_outfit"
+;$prefetch 				= 32
+class					= E_STLK
+cform           			= skeleton
+visual          			= equipments\dolg_suit
+actor_visual				= actors\hero\stalker_dolg.ogf
+player_hud_section			= actor_hud_02
+
+ef_equipment_type			= 3
+
+inv_name				= dolg_outfit_name
+inv_name_short				= dolg_outfit_name
+description				= dolg_outfit_description
+inv_weight				= 5.0
+inv_grid_width				= 2
+inv_grid_height				= 3
+inv_grid_x				= 12
+inv_grid_y				= 16
+full_icon_name				= npc_icon_dolg_outfit
+
+cost					= 14000
+slot					= 6
+full_scale_icon				= 8,11			;иконка сталкера в костюме в полный рост
+nightvision_sect			= effector_nightvision_bad
+
+immunities_sect				= sect_dolg_outfit_immunities
+
+; LOW RESISTANCE
+burn_protection 			= 0.0500
+shock_protection 			= 0.200
+radiation_protection 			= 0.0025
+chemical_burn_protection 		= 0.0300
+telepatic_protection 			= 0.0
+strike_protection 			= 0.25
+explosion_protection 			= 0.3
+wound_protection			= 0.25
+
+bones_koeff_protection 			= kombez_antigas_damage
+hit_fraction_actor			= 0.6
+power_loss				= 0.75
+
+[sect_dolg_outfit_immunities]
+burn_immunity				= 0.04
+strike_immunity				= 0.0
+shock_immunity				= 0.04
+wound_immunity				= 0.04
+radiation_immunity			= 0.0
+telepatic_immunity			= 0.0
+chemical_burn_immunity			= 0.04
+explosion_immunity			= 0.04
+fire_wound_immunity			= 0.01
+
+
+
+
+;---------------------------------------------------------------------------------------------
+;		НАУЧНЫЙ КОСТЮМ ДОЛГА
+;---------------------------------------------------------------------------------------------
+[dolg_scientific_outfit]:outfit_base
+GroupControlSection			= spawn_group
+discovery_dependency 			= 
+$spawn 					= "outfit\dolg_scientific_outfit"
+$prefetch 				= 32
+class					= E_STLK
+cform           			= skeleton
+visual          			= equipments\stalker_dolg_nauchniy_suit
+actor_visual				= actors\dolg\stalker_do_nauchniy.ogf	
+player_hud_section		 	= actor_hud_07
+
+ef_equipment_type			= 4
+
+inv_name				= dolg_scientific_outfit_name
+inv_name_short				= dolg_scientific_outfit_name
+description				= dolg_scientific_outfit_description
+inv_weight				= 9.0
+slot					= 6
+inv_grid_width				= 2
+inv_grid_height				= 3
+inv_grid_x				= 16
+inv_grid_y				= 16
+full_icon_name				= npc_icon_dolg_scientific_outfit
+nightvision_sect			= effector_nightvision_good
+
+cost					= 25000
+full_scale_icon				= 8,6		;иконка сталкера в костюме в полный рост
+
+immunities_sect				= sect_dolg_scientific_outfit_immunities
+
+; MEDIUM RESISTANCE
+burn_protection 			= 0.0950
+shock_protection 			= 0.410
+radiation_protection 			= 0.0080
+chemical_burn_protection 		= 0.1200
+telepatic_protection 			= 0.0600
+strike_protection 			= 0.28
+explosion_protection 			= 0.35
+wound_protection			= 0.3
+
+bones_koeff_protection 			= kombez_kupol_damage
+hit_fraction_actor			= 0.65
+power_loss				= 0.85
+
+[sect_dolg_scientific_outfit_immunities]
+burn_immunity				= 0.01			; коэффициенты иммунитета самого костюма
+strike_immunity				= 0.0
+shock_immunity				= 0.0
+wound_immunity				= 0.03
+radiation_immunity			= 0.0
+telepatic_immunity			= 0.0
+chemical_burn_immunity			= 0.0
+explosion_immunity			= 0.04
+fire_wound_immunity			= 0.02

@@ -1,0 +1,25 @@
+
+
+function get_stat(index) -- index= int        return string
+	if(index==0) then
+		return "00:00:00"
+	elseif(index==1) then
+		return tostring(xr_statistic.actor_statistic.founded_secrets)
+	elseif(index==2) then
+		return tostring(xr_statistic.actor_statistic.recieved_money).." RU"
+	elseif(index==3) then
+		return tostring(xr_statistic.actor_statistic.spent_money).." RU"
+	elseif(index==4) then
+		return tostring(xr_statistic.actor_statistic.recieved_quests)
+	elseif(index==5) then
+		return tostring(xr_statistic.actor_statistic.completed_quests)
+	elseif(index==6) then
+		return tostring(xr_statistic.actor_statistic.failed_quests)
+	elseif(index==7) then
+		return tostring(xr_statistic.actor_statistic.killed_stalkers)
+	elseif(index==8) then
+		return tostring(xr_statistic.actor_statistic.killed_monsters)
+	elseif(index==9) then
+		return tostring(xr_statistic.actor_statistic.artefacts_founded)
+	end
+end

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<window>
+	<main_wnd x="0" y="0" width="761" height="475"/> 
+
+	<tree_root_font font="letterica18" r="225" g="225" b="250">Encyclopedia</tree_root_font>
+	<tree_item_font font="letterica16" r="255" g="255" b="255">Encyclopedia</tree_item_font>
+
+    <!-- ENCYCLOPEDIA INDEX LIST -->
+    	<idx_list x="35" y="54" width="258" height="415" item_height="20" scroll_profile="pda">
+        	<font font="letterica16" r="255" g="255" b="255"/>
+    	</idx_list>
+
+
+    <!-- CURRENT ARTICLE HEADER -->
+	<article_header_static x="333" y="48" width="298" height="22">
+		<text font="letterica25" r="225" g="225" b="250" complex_mode="0"/>
+	</article_header_static>
+
+    	<info_list x="333" y="43" width="422" height="426" item_height="15" right_ident="5" top_indent="47" scroll_profile="pda">
+        	<font font="letterica18" r="255" g="255" b="255"/>
+    	</info_list>
+
+</window>

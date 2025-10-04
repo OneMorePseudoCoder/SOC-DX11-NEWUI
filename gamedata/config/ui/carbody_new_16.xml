@@ -1,0 +1,119 @@
+<w>
+
+	<main x="0" y="0" width="1280" height="768">
+	    <auto_static x="102" y="0" width="819" height="768" stretch="1">
+		    <texture>ui_inGame2_inventory_back</texture>
+	    </auto_static>
+	    <auto_static x="0" y="0" width="104" height="768" stretch="1">
+		    <texture>ui_inGame2_back_invw10_l</texture>
+	    </auto_static>
+	    <auto_static x="920" y="0" width="104" height="768" stretch="1">
+		    <texture>ui_inGame2_back_invw10_r</texture>
+	    </auto_static>
+        </main>
+
+        <actor_ch_info x="665" y="0" width="270" height="135">
+             <name_static x="8" y="18" width="116" height="16">
+                <text align="l" font="letterica18" color="ui_2"/>
+             </name_static>
+             <community_static x="8" y="36" width="116" height="14">
+                <text align="l" font="letterica16" color="ui_3"/>
+             </community_static>
+             <icon      x="126" y="8" width="120" height="110" stretch="1">
+		<deadbody r="255" g="160" b="160" a="205"/>
+	     </icon>
+             <icon_over x="126" y="7" width="122" height="112" stretch="1">
+                <texture>ui_inGame2_character_border</texture>
+             </icon_over>
+               <rank_icon      x="7" y="60" width="38" height="47" stretch="1"/>
+             <commumity_big_icon      x="47" y="60" width="74" height="45" stretch="1"/>
+             <commumity_big_icon_over x="42" y="58" width="84" height="48" stretch="1">
+                <texture>ui_inv_flogo_over</texture>
+	     </commumity_big_icon_over>
+         </actor_ch_info>
+ 
+        <partner_ch_info x="106" y="0" width="270" height="135">
+               <name_static x="8" y="18" width="116" height="16">
+                   <text align="l" font="letterica18" color="ui_2"/>
+               </name_static>
+              <community_static x="8" y="36" width="116" height="14">
+                  <text align="l" font="letterica16" color="ui_3"/>
+             </community_static>
+             <icon x="128" y="8" width="120" height="110" stretch="1">
+		 <deadbody r="255" g="160" b="160" a="205"/>
+	     </icon>
+             <icon_over x="126" y="7" width="122" height="112" stretch="1">
+                <texture>ui_inGame2_character_border</texture>
+             </icon_over>
+             <rank_icon      x="7" y="60" width="38" height="47" stretch="1"/>
+
+             <commumity_big_icon      x="47" y="60" width="74" height="45" stretch="1"/>
+             <commumity_big_icon_over x="42" y="58" width="84" height="48" stretch="1">
+                <texture>ui_inv_flogo_over</texture>
+	     </commumity_big_icon_over>
+         </partner_ch_info>
+
+
+
+	<dragdrop_list_our x="669" y="145" width="244" height="590"
+    	  cell_width="25" cell_height="30" rows_num="20" cols_num="9"
+		unlimited="1" group_similar="1" always_show_scroll="1" condition_progress_bar="1"/>
+
+
+	<dragdrop_list_other x="113" y="145" width="244" height="590"
+    	  cell_width="25" cell_height="30" rows_num="20" cols_num="9"
+		unlimited="1" group_similar="1" always_show_scroll="1" condition_progress_bar="1"/>
+
+
+       <actor_money_static x="665" y="116" width="67" height="20">
+                <text align="r" font="graffiti22" color="ui_7"/>
+        </actor_money_static>
+
+       <actor_weight_caption x="760" y="738" width="57" height="16">
+		<text align="r" font="letterica16" color="ui_3">Общий вес</text>
+	</actor_weight_caption>
+	<actor_weight x="817" y="736" width="35" height="16">
+		<text align="c" font="letterica16" color="ui_7"/>
+	</actor_weight>
+
+	<actor_weight_max x="852" y="736" width="68" height="16">
+		<text align="l" font="letterica16" color="ui_3"/>
+	</actor_weight_max>
+
+	<partner_weight_caption x="155" y="738" width="71" height="14">
+               <text align="r" font="letterica16" color="ui_3">Общий вес</text>
+         </partner_weight_caption>
+
+         <partner_weight x="350" y="738" width="38" height="14">
+               <text align="l" font="letterica16" color="ui_7"/>
+         </partner_weight>
+
+
+  <takeall_button x="381" y="725" width="131" height="48" stretch="1">
+    <window_name>takeall_button</window_name>
+    <texture>ui_button_main01</texture>
+    <text font="graffiti22" align="c">ui_st_take_all</text>
+    <text_color>
+      <e color ="ui_6"/>
+      <t color ="ui_black"/>
+      <d color ="ui_5"/>
+      <h color ="ui_black"/>
+    </text_color>
+  </takeall_button>
+  
+          <exit_button x="514" y="725" width="131" height="48" stretch="1">
+                <window_name>exit_button</window_name>
+                   <texture>ui_button_main01</texture>
+                <text font="graffiti22" align="c">ui_inv_exit</text>
+            <text_color>
+            <e color ="ui_6"/>
+                 <t color ="ui_black"/>
+               <d color ="ui_5"/>
+                  <h color ="ui_black"/>
+             </text_color>
+           </exit_button>
+
+
+#include "ui\actor_state_info_16.xml"
+</w>
+

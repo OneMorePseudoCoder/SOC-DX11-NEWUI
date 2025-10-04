@@ -1,0 +1,71 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[ammo_11.43x23_fmj]:ammo_base
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\ammo\ammo_11.43x23_fmj" ; option for Level Editor
+class			= AMMO
+cform           = skeleton
+visual          = dynamics\weapons\wpn_ammo\ammo_1143x23_fmj.ogf
+description		= ammo-11.43x23-fmj_descr
+$prefetch 		= 64
+
+cost			= 600
+
+box_size		= 50
+
+inv_name		= ammo-11.43x23-fmj
+inv_name_short	= ammo-11.43x23-fmj_s
+inv_weight		= .3
+
+inv_grid_width	= 2;1
+inv_grid_height	= 1
+inv_grid_x		= 9
+inv_grid_y		= 12
+
+k_dist			= 1
+k_disp			= 1
+k_hit			= 1
+k_impulse		= 1
+k_pierce		= 0.35
+k_ap			= 0.35
+impair			= 1
+buck_shot		= 1
+tracer			= on
+wm_size         = 0.05
+k_air_resistance = 1.6
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[ammo_11.43x23_hydro]:ammo_base
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\ammo\ammo_11.43x23_hydro" ; option for Level Editor
+class			= AMMO
+cform           = skeleton
+visual          = dynamics\weapons\wpn_ammo\ammo_1143x23_Hydro.ogf
+description		= ammo-11.43x23-hydro_descr
+$prefetch 		= 64
+
+cost			= 1000
+
+box_size		= 50
+
+inv_name		= ammo-11.43x23-hydro
+inv_name_short	= ammo-11.43x23-hydro_s
+inv_weight		= .3
+
+inv_grid_width		= 2;1
+inv_grid_height		= 1
+inv_grid_x			= 7
+inv_grid_y			= 12
+
+k_dist			= 1
+k_disp			= 1
+k_hit			= 1.5
+k_impulse		= 1
+k_pierce		= 0.40
+k_ap			= 0.40
+impair			= 1
+buck_shot		= 1
+tracer			= on
+wm_size         = 0.05
+k_air_resistance = 1.6

@@ -1,0 +1,29 @@
+[outfit_base]
+; delete full_scale_icon	next update- obsolete, use  full_icon_name instead !!!
+
+additional_inventory_weight		= 0		; +max_walk_weight
+additional_inventory_weight2	= 0		;	+40 kg
+full_icon_name					= npc_icon_without_outfit
+
+default_to_ruck     = false
+sprint_allowed      = true
+control_inertion_factor = 1
+player_hud_section	= actor_hud_00
+
+
+[without_outfit]:outfit_base
+;базовый костюм сталкера - костюм новичка. Обычная одежда туриста - штормовка+сапоги
+full_scale_icon		= 6,6
+
+
+;--//-----------------------------------------------------------------------------------------
+#include "stalker_outfits.ltx"
+#include "bandit_outfits.ltx"
+#include "killer_outfits.ltx"
+#include "monolit_outfits.ltx"
+#include "military_outfits.ltx"
+#include "svoboda_outfits.ltx"
+#include "dolg_outfits.ltx"
+#include "ecolog_outfits.ltx"
+#include "outfit.ltx"
+#include "helmets.ltx"

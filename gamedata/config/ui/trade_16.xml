@@ -1,0 +1,178 @@
+<window>
+
+
+---------------------------------------------------------------------------------------------
+	<main x="0" y="0" width="1280" height="768">
+	    <auto_static x="102" y="0" width="819" height="768" stretch="1">
+		    <texture>ui_inGame2_inventory_back_tr</texture>
+	    </auto_static>
+	    <auto_static x="0" y="0" width="104" height="768" stretch="1">
+		    <texture>ui_inGame2_back_invw10_l</texture>
+	    </auto_static>
+	    <auto_static x="920" y="0" width="104" height="768" stretch="1">
+		    <texture>ui_inGame2_back_invw10_r</texture>
+	    </auto_static>
+        </main>
+
+        <actor_ch_info x="665" y="0" width="270" height="135">
+             <name_static x="8" y="18" width="116" height="16">
+                <text align="l" font="letterica18" color="ui_2"/>
+             </name_static>
+             <community_static x="8" y="36" width="116" height="14">
+                <text align="l" font="letterica16" color="ui_3"/>
+             </community_static>
+             <icon      x="126" y="8" width="120" height="110" stretch="1">
+		<deadbody r="255" g="160" b="160" a="205"/>
+	     </icon>
+             <icon_over x="126" y="7" width="122" height="112" stretch="1">
+                <texture>ui_inGame2_character_border</texture>
+             </icon_over>
+               <rank_icon      x="7" y="60" width="38" height="47" stretch="1"/>
+             <commumity_big_icon      x="47" y="60" width="74" height="45" stretch="1"/>
+             <commumity_big_icon_over x="42" y="58" width="84" height="48" stretch="1">
+                <texture>ui_inv_flogo_over</texture>
+	     </commumity_big_icon_over>
+         </actor_ch_info>
+ 
+        <partner_ch_info x="106" y="0" width="270" height="135">
+               <name_static x="8" y="18" width="116" height="16">
+                   <text align="l" font="letterica18" color="ui_2"/>
+               </name_static>
+              <community_static x="8" y="36" width="116" height="14">
+                  <text align="l" font="letterica16" color="ui_3"/>
+             </community_static>
+             <icon x="128" y="8" width="120" height="110" stretch="1">
+		 <deadbody r="255" g="160" b="160" a="205"/>
+	     </icon>
+             <icon_over x="126" y="7" width="122" height="112" stretch="1">
+                <texture>ui_inGame2_character_border</texture>
+             </icon_over>
+             <rank_icon      x="7" y="60" width="38" height="47" stretch="1"/>
+
+             <commumity_big_icon      x="47" y="60" width="74" height="45" stretch="1"/>
+             <commumity_big_icon_over x="42" y="58" width="84" height="48" stretch="1">
+                <texture>ui_inv_flogo_over</texture>
+	     </commumity_big_icon_over>
+         </partner_ch_info>
+
+
+        <dragdrop_actor_trade x="669" y="144" width="244" height="180"
+           cell_width="25" cell_height="30" rows_num="6" cols_num="9"
+           unlimited="1" group_similar="1" always_show_scroll="1" condition_progress_bar="1"/>
+
+        <dragdrop_actor_trade_bag x="669" y="365" width="244" height="363"
+            cell_width="25" cell_height="30" rows_num="14" cols_num="9"
+            unlimited="1" group_similar="1" always_show_scroll="1" condition_progress_bar="1"/>
+
+
+        <dragdrop_partner_trade x="113" y="144" width="244" height="180"
+            cell_width="25" cell_height="30" rows_num="6" cols_num="9"
+            unlimited="1" group_similar="1" always_show_scroll="1" condition_progress_bar="1"/>
+
+        <dragdrop_partner_bag x="113" y="365" width="244" height="363"
+            cell_width="25" cell_height="30" rows_num="14" cols_num="9"
+            unlimited="1" group_similar="1" always_show_scroll="1" condition_progress_bar="1"/>
+
+
+         <actor_money_static x="665" y="116" width="67" height="20">
+                <text align="r" font="graffiti22" color="ui_7"/>
+          </actor_money_static>
+
+         <partner_money_static x="110" y="116" width="67" height="20">
+                <text align="r" font="graffiti22" color="ui_7"/>
+         </partner_money_static>
+
+
+         <actor_weight_caption x="760" y="738" width="57" height="16">
+		<text align="r" font="letterica16" color="ui_3">Общий вес</text>
+	  </actor_weight_caption>
+	 <actor_weight x="817" y="736" width="35" height="16">
+		<text align="c" font="letterica16" color="ui_7"/>
+	 </actor_weight>
+
+	 <actor_weight_max x="852" y="736" width="68" height="16">
+		<text align="l" font="letterica16" color="ui_3"/>
+	 </actor_weight_max>
+
+
+	 <partner_weight_caption x="155" y="738" width="71" height="14">
+               <text align="r" font="letterica16" color="ui_3">Общий вес</text>
+         </partner_weight_caption>
+
+         <partner_weight x="350" y="738" width="38" height="14">
+               <text align="l" font="letterica16" color="ui_7"/>
+         </partner_weight>
+
+
+
+
+  <!-- partner  ---------------------------------------------------------------- -->
+
+	<left_delimiter  x="97" y="326" width="270" height="44" stretch="1">
+    		<texture></texture>
+        	<trade_caption x="85" y="8" width="71" height="14">
+           	<text align="l" font="letterica16" color="ui_3"></text>
+        	</trade_caption>
+		<trade_price x="160"  y="8" width="38" height="14">
+		<text align="l" font="letterica16" color="ui_7"/>
+		</trade_price>
+		<trade_weight_max x="208" y="8" width="71" height="14">
+		<text align="l" font="letterica16" color="ui_3"/>
+		</trade_weight_max>
+  	</left_delimiter>
+  
+  <!-- actor  ---------------------------------------------------------------- -->
+	<right_delimiter x="652" y="326" width="270" height="44" stretch="1">
+    		<texture></texture>
+    		<trade_caption x="85" y="8" width="71" height="14">
+      		<text align="l" font="letterica16" color="ui_3"></text>
+    		</trade_caption>
+    		<trade_price x="160"  y="8" width="38" height="14">
+		<text align="l" font="letterica16" color="ui_7"/>
+		</trade_price>
+		<trade_weight_max x="208" y="8" width="71" height="14">
+		<text align="l" font="letterica16" color="ui_3"/>
+		</trade_weight_max>
+	</right_delimiter>
+
+
+	<trade_buy_button x="123" y="327" width="90" height="26" stretch="1" hint="Купить вещи">
+	    <window_name>trade_buy_button</window_name>
+	    <texture>ui_button_main01</texture>
+	    <text font="graffiti22" align="c">Купить</text>
+	    <text_color>
+	        <e color ="ui_6"/>
+	        <t color ="ui_black"/>
+	        <d color ="ui_5"/>
+	        <h color ="ui_black"/>
+	    </text_color>
+	</trade_buy_button>
+
+	<trade_sell_button x="678" y="327" width="90" height="26" stretch="1" hint="Продать вещи">
+	    <window_name>trade_sell_button</window_name>
+	    <texture>ui_button_main01</texture>
+	    <text font="graffiti22" align="c">Продать</text>
+	    <text_color>
+	        <e color ="ui_6"/>
+	        <t color ="ui_black"/>
+	        <d color ="ui_5"/>
+	        <h color ="ui_black"/>
+	    </text_color>
+	</trade_sell_button>
+  
+          <exit_button x="450" y="725" width="131" height="48" stretch="1">
+                <window_name>exit_button</window_name>
+                   <texture>ui_button_main01</texture>
+                <text font="graffiti22" align="c">Выход</text>
+                <text_color>
+                <e color ="ui_6"/>
+                <t color ="ui_black"/>
+               <d color ="ui_5"/>
+               <h color ="ui_black"/>
+             </text_color>
+           </exit_button>
+
+
+#include "ui\actor_state_info_16.xml"
+</window>
+

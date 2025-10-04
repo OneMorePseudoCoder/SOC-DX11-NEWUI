@@ -1,0 +1,109 @@
+[ammo_7.62x54_7h1]:ammo_base
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\ammo\ammo_7.62x54_7h1" ; option for Level Editor
+class			= AMMO
+cform           = skeleton
+visual          = dynamics\weapons\wpn_ammo\ammo_762x54_7h1.ogf
+description		= ammo-7.62x54-7h14_descr
+$prefetch 		= 64
+
+cost			= 950
+
+box_size		= 10
+
+inv_name		= ammo-7.62x54-7h14
+inv_name_short	= ammo-7.62x54-7h14_s
+inv_weight		= .23
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 17	;15
+inv_grid_y			= 9
+
+k_dist			= 1
+k_disp			= 1
+k_hit			= 1
+k_impulse		= 1
+k_pierce		= 0.75
+k_ap			= 0.75
+impair			= 1
+buck_shot		= 1
+tracer			= on
+wm_size         = 0.05
+explosive		= off
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; soc ch
+[ammo_7.62x54_ap]:ammo_base
+GroupControlSection	= spawn_group
+discovery_dependency 	= 
+$spawn				= "weapons\ammo\ammo_7.62x54_ap" ; option for Level Editor
+class				= AMMO
+cform                   	= skeleton
+visual                  	= weapons\ammo\ammo_762x54_ap.ogf
+description			= enc_weapons1_ammo_ammo-7.62x54-ap
+$prefetch 			= 64
+
+cost				= 1300
+
+box_size			= 10
+
+inv_name			= ammo-7.62x54-ap
+inv_name_short			= ammo-7.62x54-ap_s
+inv_weight			= .23
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x			= 15
+inv_grid_y			= 10
+
+k_dist			= 1
+k_disp			= 1.1
+k_hit			= 1.1
+k_impulse		= 1
+k_pierce		= 0.8
+k_ap			= 0.8
+impair			= 1
+buck_shot		= 1
+
+buck_shot			= 1
+tracer				= on
+wm_size				= 0.06
+explosive			= off
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Бронебойный патрон
+[ammo_7.62x54_7h14]:ammo_base
+GroupControlSection	= spawn_group
+discovery_dependency 	= 
+$spawn				= "weapons\ammo\ammo_7.62x54_7h14" ; option for Level Editor
+class				= AMMO
+visual          		= dynamics\weapons\wpn_ammo\ammo_762x54_7h14.ogf
+
+
+cost				= 1500
+inv_name			= ammo-7.62x54-7h14
+inv_name_short			= ammo-7.62x54-7h14
+description			= ammo-ap_descr
+inv_weight			= 0.4
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x			= 17
+inv_grid_y			= 9
+
+box_size			= 30
+
+k_dist			= 1
+k_disp			= 1.1
+k_hit			= 1.2
+k_impulse		= 1
+k_pierce		= 0.8
+k_ap			= 0.8
+impair			= 1
+buck_shot		= 1
+
+buck_shot			= 1
+tracer				= on
+wm_size				= 0.06
+explosive			= off
+
