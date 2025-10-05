@@ -160,6 +160,9 @@ void CActor::cam_Update(float dt, float fFOV)
 	// Alex ADD: smooth crouch fix
 	constexpr const float HeightInterpolationSpeed = 4.f;
 
+	if (CurrentHeight < 0.0f)
+		CurrentHeight = CameraHeight();
+
 	if (CurrentHeight != CameraHeight())
 		CurrentHeight = (CurrentHeight * (1.0f - HeightInterpolationSpeed * dt)) + (CameraHeight() * HeightInterpolationSpeed * dt);
 
